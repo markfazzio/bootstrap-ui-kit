@@ -1,0 +1,12 @@
+.rpc-alert {
+  &--fixed {
+    z-index: 10;
+  }
+
+  &__icon {
+    svg {
+      min-width: 1rem;
+      max-width: 1.25rem;
+    }
+  }
+}

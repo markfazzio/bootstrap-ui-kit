@@ -1,0 +1,43 @@
+@import './variables';
+@import './colors';
+
+@mixin beveled-grey {
+  background: #8c9091;
+  border-bottom: $bevel-amount solid #47464b;
+  border-right: $bevel-amount solid #47464b;
+  border-left: $bevel-amount solid #dadadc;
+  border-top: $bevel-amount solid #dadadc;
+}
+
+@mixin track($fill: 0) {
+  box-sizing: border-box;
+  border: none;
+  width: $form-field-range-slider-track-width;
+  height: $form-field-range-slider-track-height;
+  background: $track-c;
+
+  @if $fill == 1 {
+    .js & {
+      background: linear-gradient($fill-c, $fill-c)
+        0 /
+        var(--sx)
+        100%
+        no-repeat
+        $track-c;
+    }
+  }
+}
+
+@mixin fill() {
+  height: $form-field-range-slider-track-height;
+  background: $fill-c;
+}
+
+@mixin thumb() {
+  box-sizing: border-box;
+  border: none;
+  width: $form-field-range-slider-thumb-width;
+  height: $form-field-range-slider-thumb-height;
+  border-radius: 50%;
+  background-color: var(--bs-primary);
+}

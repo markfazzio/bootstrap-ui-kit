@@ -1,0 +1,79 @@
+// basics
+$white: #fff;
+$black: #000;
+$light-grey: #eee;
+$light-grey-alt: #cfcfcf;
+$medium-grey: #999;
+$dark-grey: #222;
+
+// pkmn palette (not used in cards)
+$pkmn-red: #cc0000;
+$pkmn-blue: #3b4cca;
+$pkmn-blue-alt: #0075be;
+$pkmn-yellow: #ffde00;
+$pkmn-gold: #b3a125;
+$pkmn-silver: #c0c0c0;
+
+// bs color overrides
+$primary: $pkmn-blue;
+$secondary: $pkmn-silver;
+$success: $pkmn-gold;
+$info: $pkmn-blue-alt;
+$warning: $pkmn-yellow;
+$danger: $pkmn-red;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// card layout
+$hp-color: #da472d;
+$poke-power-red: #c23429;
+$poke-power-blue: #5a5a7e;
+
+// card border
+$card-border-color: #ffe50a;
+$card-border-color-lc: #b8f9fd;
+$card-border-color-back: #192653;
+$card-border-scan-strip-color: #bf9724;
+$card-border-scan-strip-color-glow: #f9e17d;
+
+// card frame
+$card-frame-linear-gradient: linear-gradient(
+  45deg,
+  #cf9401,
+  #f9d51e,
+  #ffff7a,
+  #f9d51e,
+  #ffff7a,
+  #cf9401
+);
+
+// default BG
+$card-bg-gradient: linear-gradient(
+  to top,
+  $card-border-color,
+  #ffea3d 70%,
+  $card-border-color
+);
+
+// dividers
+$card-horizontal-divider-light: calc(var(--pkmn-card-width) * 0.00522) solid
+  $white;
+$card-horizontal-divider: calc(var(--pkmn-card-width) * 0.00522) solid black;
+$gym-cost-grid-divider: calc(var(--pkmn-card-width) * 0.0033) solid black;
+
+// frame stamp default
+$default-stamp-fill: #c4ac4c;
+
+// card set
+$hit-card-glow: #aef4af;
+
+// forms
+$form-field-focused-outline: var(--bs-primary);
+$form-field-label-color: var(--bs-primary);
+$toggle-switch-focus-color: var(--bs-warning);
+$toggle-switch-label-color: $medium-grey;
+$toggle-switch-disabled-color: $medium-grey;
+$toggle-switch-disabled-color-handle: $light-grey-alt;
+$toggle-switch-toggle-color: var(--bs-success);
+$track-c: var(--bs-warning);
+$fill-c: var(--bs-primary);

@@ -1,0 +1,50 @@
+@import '../../scss/colors';
+
+.rpc-breadcrumbs {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+
+  .breadcrumb {
+    margin-bottom: 0;
+    --bs-breadcrumb-item-active-color: var(--bs-warning);
+
+    &-item {
+      button {
+        background-color: transparent;
+        border: none;
+      }
+
+      button,
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  button {
+    line-height: 1;
+  }
+
+  &.bg-dark,
+  &.bg-primary,
+  &.bg-secondary {
+    .breadcrumb {
+      &-item {
+        + .breadcrumb-item::before {
+          color: $white;
+        }
+      }
+    }
+
+    a,
+    button {
+      color: $white;
+    }
+  }
+}

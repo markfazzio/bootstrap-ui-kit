@@ -1,0 +1,114 @@
+@import '../../scss/variables';
+@import '../../scss/colors';
+
+.btn {
+  transition: background ease-in-out 350ms;
+
+  &.btn-secondary {
+    --bs-btn-color: #{$black};
+
+    svg path {
+      fill: $black;
+    }
+  }
+
+  &.btn-info {
+    svg path {
+      fill: $white;
+    }
+  }
+
+  &.btn-white {
+    background-color: $white;
+
+    svg path {
+      fill: $black;
+    }
+  }
+
+  &.btn-light,
+  &.btn-success,
+  &.btn-outline-dark,
+  &.btn-warning {
+    svg path {
+      fill: $black;
+    }
+  }
+
+  &.btn-outline-dark:hover {
+    svg path {
+      fill: $white;
+    }
+  }
+
+  &.btn-outline-dark.active:disabled {
+    --bs-btn-disabled-color: $white;
+    --bs-btn-disabled-bg: $black;
+    --bs-btn-disabled-border-color: $black;
+    --bs-btn-disabled-opacity: 1;
+  }
+
+  &.has-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &.icon--left {
+      svg:not(:only-child) {
+        margin-right: auto;
+      }
+    }
+
+    &.icon--right {
+      svg:not(:only-child) {
+        margin-left: auto;
+      }
+
+      &.has-badge {
+        .badge {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  &-info {
+    svg path {
+      fill: $black;
+    }
+  }
+
+  &.has-badge {
+    .badge {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &.circular {
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    display: inline-flex;
+
+    &.btn-lg {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &.btn-sm {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__label {
+    padding: 0 0.5rem;
+    flex: 1;
+  }
+
+  .loading-indicator__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}

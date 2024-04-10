@@ -1,0 +1,27 @@
+@import '../../scss/colors';
+
+.rpc-modal {
+  .modal-content {
+    color: $black;
+  }
+
+  .modal-header {
+    border-bottom: 0;
+  }
+
+  .modal-footer {
+    border-top: 0;
+
+    .btn {
+      min-width: 100px;
+    }
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0.65;
+}
+
+.modal-backdrop.show {
+  opacity: 0.75 !important;
+}

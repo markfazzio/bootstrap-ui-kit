@@ -1,0 +1,79 @@
+@import '../../scss/colors';
+@import '../../scss/mixins';
+
+.rpc-range-slider-input {
+  label {
+    font-size: 0.9rem;
+  }
+
+  &__slider {
+    cursor: grab;
+
+    &,
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--val) - var(--min)) / var(--range));
+    --sx: calc(
+      0.5 * #{$form-field-range-slider-thumb-height} + var(--ratio) * (100% - #{$form-field-range-slider-thumb-height})
+    );
+    margin: 0;
+    padding: 0;
+    width: $form-field-range-slider-track-width;
+    height: $form-field-range-slider-thumb-height;
+    background: transparent;
+    font:
+      1em/1 arial,
+      sans-serif;
+
+    &::-webkit-slider-runnable-track {
+      @include track(1);
+    }
+
+    &::-moz-range-track {
+      @include track;
+    }
+
+    &::-ms-track {
+      @include track;
+    }
+
+    &::-moz-range-progress {
+      @include fill;
+    }
+
+    &::-ms-fill-lower {
+      @include fill;
+    }
+
+    &::-webkit-slider-thumb {
+      margin-top: 0.5 *
+        (
+          $form-field-range-slider-track-height -
+            $form-field-range-slider-thumb-height
+        );
+      @include thumb;
+    }
+
+    &::-moz-range-thumb {
+      @include thumb;
+    }
+
+    &::-ms-thumb {
+      margin-top: 0;
+      @include thumb;
+    }
+
+    &::-ms-tooltip {
+      display: none;
+    }
+  }
+
+  &__value {
+    margin-left: 0.5rem;
+    min-width: 30px;
+    text-align: right;
+  }
+}

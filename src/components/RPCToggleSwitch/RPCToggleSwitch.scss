@@ -1,0 +1,147 @@
+@import '../../scss/variables';
+@import '../../scss/colors';
+
+.toggle-switch {
+  position: relative;
+  width: 75px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+
+  &-checkbox {
+    display: none;
+  }
+
+  &-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0 solid $toggle-switch-label-color;
+    border-radius: 20px;
+    &:focus {
+      outline: none;
+      > span {
+        box-shadow: 0 0 2px 5px $toggle-switch-focus-color;
+      }
+    }
+    > span:focus {
+      outline: none;
+    }
+
+    &-text {
+      font-size: $form-field-label-font-size;
+    }
+  }
+
+  &-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+    &:before,
+    &:after {
+      display: block;
+      float: left;
+      width: 50%;
+      height: 34px;
+      padding: 0;
+      line-height: 34px;
+      font-size: 14px;
+      color: white;
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+    &:before {
+      content: attr(data-yes);
+      text-transform: uppercase;
+      padding-left: 10px;
+      background-color: $toggle-switch-toggle-color;
+      color: $white;
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+
+    &.toggle-switch-inner {
+      &:before,
+      &:after {
+        background-color: $toggle-switch-disabled-color;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &-inner:after {
+    content: attr(data-no);
+    text-transform: uppercase;
+    padding-right: 10px;
+    background-color: $toggle-switch-label-color;
+    color: $white;
+    text-align: right;
+  }
+
+  &-switch {
+    display: block;
+    width: 24px;
+    margin: 5px;
+    background: $white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 40px;
+    border: 0 solid $toggle-switch-label-color;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+
+    &.toggle-switch-disabled {
+      background: $toggle-switch-disabled-color-handle;
+    }
+  }
+
+  &-checkbox:checked + &-label {
+    .toggle-switch-inner {
+      margin-left: 0;
+    }
+    .toggle-switch-switch {
+      right: 0px;
+    }
+  }
+
+  &.small {
+    width: 40px;
+    .toggle-switch-inner {
+      &:after,
+      &:before {
+        content: '';
+        height: 20px;
+        line-height: 20px;
+      }
+    }
+    .toggle-switch-switch {
+      width: 16px;
+      right: 20px;
+      margin: 2px;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+
+    .toggle-switch-label-text {
+      margin-right: 15px;
+    }
+
+    &.stacked {
+      margin-bottom: $form-row-margin-bottom;
+    }
+  }
+}

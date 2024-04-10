@@ -1,0 +1,80 @@
+@import '../../scss/colors';
+
+.rpc-accordion.accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-active-bg: transparent;
+  --bs-accordion-btn-icon: '';
+  --bs-accordion-btn-active-icon: '';
+
+  .accordion {
+    &-header {
+      .badge {
+        margin: 0 1rem;
+      }
+    }
+
+    &-button {
+      --bs-accordion-active-color: var(--bs-primary);
+
+      &:hover {
+        color: var(--bs-accordion-active-color);
+      }
+
+      &:after {
+        display: none;
+      }
+
+      .expand-icon {
+        display: none;
+
+        svg path {
+          fill: var(--bs-accordion-active-color);
+        }
+      }
+
+      .collapse-icon {
+        svg path {
+          fill: var(--bs-danger);
+        }
+      }
+
+      &.collapsed {
+        .expand-icon {
+          display: block;
+        }
+
+        .collapse-icon {
+          display: none;
+        }
+      }
+    }
+
+    &-item {
+      background-color: transparent;
+
+      &__header {
+        line-height: 1;
+      }
+
+      &__subheader {
+        font-size: 0.7rem;
+      }
+
+      &.bg-dark {
+        .expand-icon {
+          svg path {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &--fluid {
+    &,
+    .accordion,
+    .accordion-item {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../scss/colors';
+
+.offcanvas {
+  background: rgba(255, 255, 255, 0.9);
+
+  &-header,
+  &-body {
+    color: $black;
+  }
+
+  &-bottom {
+    height: auto;
+  }
+
+  &-header {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  &-title {
+    color: $dark-grey;
+  }
+
+  &-actions {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+
+    .btn {
+      min-width: 7rem;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &--dark {
+    background: rgba(0, 0, 0, 0.8);
+
+    .offcanvas-header {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .offcanvas-title {
+      color: var(--bs-success);
+    }
+
+    .offcanvas-body {
+      color: $white;
+    }
+  }
+}

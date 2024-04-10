@@ -1,0 +1,69 @@
+@import '../../scss/colors';
+
+.rpc-text-input {
+  &.label-primary > label {
+    color: var(--bs-primary) !important;
+  }
+
+  &.label-light > label {
+    color: $light-grey !important;
+  }
+
+  .form-control {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .input-arrows {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 25px;
+    z-index: 3;
+    right: 1px;
+    top: 1px;
+    height: calc(100% - 2px);
+    justify-content: space-between;
+    border-left: 1px solid $light-grey-alt;
+
+    .arrow {
+      padding: 0;
+      flex: 1;
+
+      &.up {
+        border-bottom: 1px solid $light-grey-alt;
+        border-radius: 0;
+        border-top-right-radius: var(--bs-border-radius);
+      }
+
+      &.down {
+        border-radius: 0;
+        border-bottom-right-radius: var(--bs-border-radius);
+      }
+
+      &:hover {
+        background-color: $light-grey;
+      }
+
+      &:disabled {
+        background-color: $light-grey-alt;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .input-clear {
+    height: calc(100% - 2px);
+    top: 1px;
+    right: 0;
+  }
+
+  &--numeric {
+    .input-clear {
+      right: 1.5rem;
+    }
+  }
+}

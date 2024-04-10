@@ -1,0 +1,11 @@
+@import '../../scss/colors';
+
+.mock-logo {
+  width: 30px;
+  height: 30px;
+  background-image: url('./tcg-app-small.svg');
+  background-repeat: no-repeat;
+  background-color: $white;
+  border-radius: 30px;
+  padding: 1rem;
+}

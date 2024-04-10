@@ -1,0 +1,8 @@
+.tooltip {
+  &.transparent {
+    .tooltip-inner {
+      padding: 0;
+      background: transparent;
+    }
+  }
+}
